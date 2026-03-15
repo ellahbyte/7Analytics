@@ -5,11 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ellah Jane Mortel - Programming Tasks Portfolio</title>
+<title>Ellah Jane Mortel - Programming Portfolio</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* GLOBAL */
 
 *{
 margin:0;
@@ -19,7 +22,7 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family:'Inter',sans-serif;
 background:#0d1117;
 color:#e6edf3;
 line-height:1.6;
@@ -64,19 +67,6 @@ margin-bottom:10px;
 font-size:1.3rem;
 color:#60a5fa;
 margin-bottom:15px;
-border-right:2px solid #60a5fa;
-white-space:nowrap;
-overflow:hidden;
-animation:typing 3s steps(40) forwards, blink .8s infinite;
-}
-
-@keyframes typing{
-from{width:0}
-to{width:100%}
-}
-
-@keyframes blink{
-50%{border-color:transparent}
 }
 
 .contact-info{
@@ -113,7 +103,7 @@ border:6px solid #1f2937;
 object-fit:cover;
 }
 
-/* NAVIGATION */
+/* NAV */
 
 nav{
 background:#020617;
@@ -135,14 +125,13 @@ nav a{
 text-decoration:none;
 color:#cbd5f5;
 font-weight:500;
-transition:.3s;
 }
 
 nav a:hover{
 color:#60a5fa;
 }
 
-/* ABOUT */
+/* TITLES */
 
 .section-title{
 font-size:2.3rem;
@@ -155,6 +144,8 @@ text-align:center;
 color:#9ca3af;
 margin-bottom:40px;
 }
+
+/* ABOUT */
 
 .about-content{
 max-width:700px;
@@ -222,6 +213,151 @@ margin-bottom:5px;
 color:#9ca3af;
 }
 
+/* TASK SECTIONS */
+
+.task-category{
+margin-top:40px;
+}
+
+.category-header{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:25px;
+}
+
+.category-title{
+font-size:1.4rem;
+color:#60a5fa;
+}
+
+.tasks-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.task-card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+border:1px solid #1f2937;
+transition:0.3s;
+position:relative;
+}
+
+.task-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+.task-card.midterm{
+border-left:4px solid #3b82f6;
+}
+
+.task-number{
+position:absolute;
+top:15px;
+right:20px;
+font-size:2rem;
+font-weight:700;
+color:#1f2937;
+}
+
+.task-title{
+margin-bottom:10px;
+color:#60a5fa;
+}
+
+.task-description{
+font-size:.95rem;
+margin-bottom:20px;
+color:#9ca3af;
+}
+
+.task-buttons{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.file-section{
+background:#020617;
+padding:12px;
+border-radius:8px;
+font-size:.85rem;
+border:1px solid #1f2937;
+}
+
+.file-section.pdf{
+border-left:4px solid #ef4444;
+}
+
+.btn{
+display:inline-block;
+margin-top:6px;
+padding:6px 10px;
+border-radius:6px;
+font-size:.8rem;
+text-decoration:none;
+}
+
+.btn-primary{
+background:#3b82f6;
+color:white;
+}
+
+.btn-primary:hover{
+background:#2563eb;
+}
+
+.btn-pdf{
+background:#ef4444;
+color:white;
+}
+
+.btn-pdf:hover{
+background:#dc2626;
+}
+
+/* PDF MODAL */
+
+.pdf-modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+}
+
+.pdf-modal-content{
+position:relative;
+width:90%;
+height:90%;
+margin:2% auto;
+background:#000;
+border-radius:10px;
+overflow:hidden;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:20px;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+.pdf-container{
+width:100%;
+height:100%;
+border:none;
+}
+
 /* FOOTER */
 
 footer{
@@ -240,10 +376,6 @@ flex-direction:column;
 text-align:center;
 }
 
-.hero-left{
-text-align:center;
-}
-
 nav ul{
 flex-direction:column;
 gap:15px;
@@ -257,175 +389,142 @@ gap:15px;
 <body>
 
 <header id="home">
-
 <div class="container header-content">
 
 <div class="hero-left">
-
 <h1 class="hero-name">Ellah Jane Mortel</h1>
-
 <p class="typing-subtitle">Programming Tasks Portfolio</p>
 
 <div class="contact-info">
-
-<a href="mailto:ellahjanemortel@gmail.com">
-<i class="fa-solid fa-envelope"></i> Email
-</a>
-
-<a href="tel:+639750952032">
-<i class="fa-solid fa-phone"></i> Phone
-</a>
-
+<a href="mailto:ellahjanemortel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+<a href="tel:+639750952032"><i class="fa-solid fa-phone"></i> Phone</a>
 </div>
-
 </div>
 
 <div class="hero-right">
-
 <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400" class="profile-photo">
-
 </div>
 
 </div>
-
 </header>
 
 <nav>
-
 <div class="container">
-
 <ul>
-
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#education">Education</a></li>
-<li><a href="#practice">Practice Tasks</a></li>
-<li><a href="#midterm">Midterm Tasks</a></li>
+<li><a href="#practice-tasks">Practice Tasks</a></li>
+<li><a href="#midterm-tasks">Midterm Tasks</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
-
 </div>
-
 </nav>
 
 <section id="about">
-
 <div class="container">
-
 <h2 class="section-title">About Me</h2>
-
 <p class="section-subtitle">Programming Student Showcase</p>
 
 <div class="about-content">
-
 <p>
-This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks focused on data cleaning in Excel. Each task demonstrates my ability to organize datasets, correct inconsistencies, and apply data preparation techniques to ensure accuracy and reliability.
+This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks focused on data cleaning in Excel. Each task demonstrates my ability to organize datasets, correct inconsistencies, and prepare data for accurate analysis.
+</p>
+</div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+
+<div class="education-card">
+
+<h2 class="education-title">
+<i class="fa-solid fa-graduation-cap"></i> Education
+</h2>
+
+<div class="education-timeline">
+
+<div class="education-item">
+<h3>College</h3>
+<p>Currently enrolled in City College of Angeles</p>
+</div>
+
+<div class="education-item">
+<h3>Senior High School</h3>
+<p>Graduated from Angeles City Science High School</p>
+</div>
+
+<div class="education-item">
+<h3>Junior High School</h3>
+<p>Graduated from Don Antonio Lee Chi Uan Integrated School</p>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="practice-tasks">
+<div class="container">
+
+<h2 class="section-title">Practice Tasks</h2>
+<p class="section-subtitle">3 Hands-on programming exercises</p>
+
+<div class="tasks-grid">
+
+<div class="task-card">
+<div class="task-number">01</div>
+<h3 class="task-title">Practice Task 2</h3>
+<p class="task-description">
+Cleaning and organizing a retailer dataset in Excel by correcting formats and inconsistencies.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong>Task Documentation</strong><br>
+<a href="#" class="btn btn-pdf" onclick="openPDF('practice/practice-task-1.pdf')">View PDF</a>
+</div>
+
+<div class="file-section">
+<strong>Solution Files</strong><br>
+<a href="practice/practice-task-1.zip" class="btn btn-primary" download>Download ZIP</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="midterm-tasks">
+<div class="container">
+
+<h2 class="section-title">Midterm Tasks</h2>
+<p class="section-subtitle">2 Comprehensive programming assessments</p>
+
+<div class="tasks-grid">
+
+<div class="task-card midterm">
+
+<div class="task-number">01</div>
+
+<h3 class="task-title">Midterm Task 1</h3>
+
+<p class="task-description">
+Comprehensive Excel data preparation and analysis task.
 </p>
 
 </div>
 
 </div>
 
+</div>
 </section>
 
-<section id="education">
-
-<div class="container">
-
-<div class="education-card">
-
-<h2 class="education-title">
-
-<i class="fa-solid fa-graduation-cap"></i>
-Education
-
-</h2>
-
-<div class="education-timeline">
-
-<div class="education-item">
-
-<h3>College</h3>
-<p>Currently enrolled in City College of Angeles</p>
-
-</div>
-
-<div class="education-item">
-
-<h3>Senior High School</h3>
-<p>Graduated from Angeles City Science High School</p>
-
-</div>
-
-<div class="education-item">
-
-<h3>Junior High School</h3>
-<p>Graduated from Don Antonio Lee Chi Uan Integrated School</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="practice">
-
-<div class="container">
-
-<h2 class="section-title">Practice Tasks</h2>
-<p class="section-subtitle">Data Cleaning Activities</p>
-
-<div class="about-content">
-<p>Practice tasks will be displayed here.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="midterm">
-
-<div class="container">
-
-<h2 class="section-title">Midterm Tasks</h2>
-<p class="section-subtitle">Major Data Cleaning Projects</p>
-
-<div class="about-content">
-<p>Midterm tasks will be displayed here.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<div class="container">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="about-content">
-
-<p>Email: ellahjanemortel@gmail.com</p>
-<p>Phone: +63 975 095 2032</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>© 2026 Ellah Jane Mortel | Programming Portfolio</p>
-
-</footer>
-
-</body>
-</html>
+<div id="pdfModal" class="pdf-modal">
+<div class="pdf-modal-c
 ```
