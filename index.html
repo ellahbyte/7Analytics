@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,35 +43,59 @@ header{
 background:linear-gradient(135deg,#0f172a,#020617);
 padding:70px 0;
 border-bottom:1px solid #1f2937;
+position: relative;
 }
 
 .header-content{
 display:flex;
-align-items:center;
+align-items:flex-start;
 justify-content:space-between;
 flex-wrap:wrap;
 gap:40px;
+position: relative;
+}
+
+.header-main-title{
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+font-size: 2rem;
+color: #60a5fa;
+font-weight: 600;
+z-index: 10;
 }
 
 .hero-left{
 flex:1;
 }
 
-.hero-name{
-font-size:2.8rem;
-margin-bottom:10px;
-}
-
 .typing-subtitle{
 font-size:1.3rem;
 color:#60a5fa;
 margin-bottom:15px;
+min-height: 40px;
+border-right: 2px solid #60a5fa;
+white-space: nowrap;
+overflow: hidden;
+animation: typing 3s steps(30) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #60a5fa; }
 }
 
 .contact-info{
 display:flex;
 gap:15px;
 flex-wrap:wrap;
+margin-top: 20px;
 }
 
 .contact-info a{
@@ -87,20 +110,67 @@ font-size:.9rem;
 
 .contact-info a:hover{
 background:#2563eb;
+transform: translateY(-2px);
 }
 
 .hero-right{
 flex:1;
 display:flex;
-justify-content:center;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.profile-container{
+position: relative;
+margin-bottom: 20px;
 }
 
 .profile-photo{
-width:200px;
-height:200px;
-border-radius:50%;
-border:6px solid #1f2937;
-object-fit:cover;
+width: 180px;
+height: 240px;
+border-radius: 20px;
+border: 4px solid #1f2937;
+object-fit: cover;
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+box-shadow: 
+    0 15px 35px rgba(0,0,0,0.4),
+    0 5px 15px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+position: relative;
+overflow: hidden;
+}
+
+.profile-photo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.profile-photo:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #3b82f6;
+    box-shadow: 
+        0 30px 60px rgba(59,130,246,0.3),
+        0 20px 40px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.profile-photo:hover::before {
+    left: 100%;
+}
+
+.profile-name{
+font-size: 2rem;
+font-weight: 600;
+color: #e6edf3;
+margin: 0;
+letter-spacing: -0.5px;
 }
 
 /* NAV */
@@ -125,9 +195,10 @@ nav a{
 text-decoration:none;
 color:#cbd5f5;
 font-weight:500;
+transition: 0.3s;
 }
 
-nav a:hover{
+nav a:hover, nav a.active{
 color:#60a5fa;
 }
 
@@ -300,6 +371,7 @@ padding:6px 10px;
 border-radius:6px;
 font-size:.8rem;
 text-decoration:none;
+transition: 0.3s;
 }
 
 .btn-primary{
@@ -309,6 +381,7 @@ color:white;
 
 .btn-primary:hover{
 background:#2563eb;
+transform: translateY(-1px);
 }
 
 .btn-pdf{
@@ -318,6 +391,7 @@ color:white;
 
 .btn-pdf:hover{
 background:#dc2626;
+transform: translateY(-1px);
 }
 
 /* PDF MODAL */
@@ -350,6 +424,11 @@ right:20px;
 font-size:28px;
 color:white;
 cursor:pointer;
+transition: 0.3s;
+}
+
+.close:hover{
+color: #ef4444;
 }
 
 .pdf-container{
@@ -374,11 +453,31 @@ color:#9ca3af;
 .header-content{
 flex-direction:column;
 text-align:center;
+gap: 30px;
+}
+
+.header-main-title{
+position: static;
+transform: none;
+margin-bottom: 20px;
+}
+
+.profile-photo{
+width: 150px;
+height: 200px;
+}
+
+.profile-name{
+font-size: 1.6rem;
 }
 
 nav ul{
 flex-direction:column;
 gap:15px;
+}
+
+.typing-subtitle{
+font-size: 1.1rem;
 }
 
 }
@@ -389,29 +488,32 @@ gap:15px;
 <body>
 
 <header id="home">
-<div class="container header-content">
+<div class="container">
+    <h1 class="header-main-title">Programming Tasks Portfolio</h1>
+    
+    <div class="header-content">
+        <div class="hero-left">
+            <p class="typing-subtitle" data-text="Excel Data Cleaning & Analysis Specialist">Excel Data Cleaning & Analysis Specialist</p>
+            <div class="contact-info">
+                <a href="mailto:ellahjanemortel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="tel:+639750952032"><i class="fa-solid fa-phone"></i> Phone</a>
+            </div>
+        </div>
 
-<div class="hero-left">
-<h1 class="hero-name">Ellah Jane Mortel</h1>
-<p class="typing-subtitle">Programming Tasks Portfolio</p>
-
-<div class="contact-info">
-<a href="mailto:ellahjanemortel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-<a href="tel:+639750952032"><i class="fa-solid fa-phone"></i> Phone</a>
-</div>
-</div>
-
-<div class="hero-right">
-<img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400" class="profile-photo">
-</div>
-
+        <div class="hero-right">
+            <div class="profile-container">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400" class="profile-photo" alt="Ellah Jane Mortel">
+            </div>
+            <h1 class="profile-name">Ellah Jane Mortel</h1>
+        </div>
+    </div>
 </div>
 </header>
 
 <nav>
 <div class="container">
 <ul>
-<li><a href="#home">Home</a></li>
+<li><a href="#home" class="active" onclick="triggerTyping()">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#practice-tasks">Practice Tasks</a></li>
@@ -421,6 +523,7 @@ gap:15px;
 </div>
 </nav>
 
+<!-- Rest of your sections remain exactly the same -->
 <section id="about">
 <div class="container">
 <h2 class="section-title">About Me</h2>
@@ -436,30 +539,23 @@ This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks fo
 
 <section id="education">
 <div class="container">
-
 <div class="education-card">
-
 <h2 class="education-title">
 <i class="fa-solid fa-graduation-cap"></i> Education
 </h2>
-
 <div class="education-timeline">
-
 <div class="education-item">
 <h3>College</h3>
 <p>Currently enrolled in City College of Angeles</p>
 </div>
-
 <div class="education-item">
 <h3>Senior High School</h3>
 <p>Graduated from Angeles City Science High School</p>
 </div>
-
 <div class="education-item">
 <h3>Junior High School</h3>
 <p>Graduated from Don Antonio Lee Chi Uan Integrated School</p>
 </div>
-
 </div>
 </div>
 </div>
@@ -467,78 +563,125 @@ This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks fo
 
 <section id="practice-tasks">
 <div class="container">
-
 <h2 class="section-title">Practice Tasks</h2>
 <p class="section-subtitle">3 Hands-on programming exercises</p>
 
 <div class="tasks-grid">
-
 <div class="task-card">
 <div class="task-number">01</div>
 <h3 class="task-title">Practice Task 2</h3>
 <p class="task-description">
 Cleaning and organizing a retailer dataset in Excel by correcting formats and inconsistencies.
 </p>
-
 <div class="task-buttons">
-
 <div class="file-section pdf">
 <strong>Task Documentation</strong><br>
 <a href="#" class="btn btn-pdf" onclick="openPDF('practice/practice-task-1.pdf')">View PDF</a>
 </div>
-
 <div class="file-section">
 <strong>Solution Files</strong><br>
 <a href="practice/practice-task-1.zip" class="btn btn-primary" download>Download ZIP</a>
 </div>
-
 </div>
 </div>
-
 </div>
-
 </div>
 </section>
 
 <section id="midterm-tasks">
 <div class="container">
-
 <h2 class="section-title">Midterm Tasks</h2>
 <p class="section-subtitle">2 Comprehensive programming assessments</p>
 
 <div class="tasks-grid">
-
 <div class="task-card midterm">
-
 <div class="task-number">01</div>
-
 <h3 class="task-title">Midterm Task 1</h3>
-
 <p class="task-description">
 Comprehensive Excel data preparation and analysis task.
 </p>
-
 </div>
-
 </div>
-
 </div>
 </section>
 
 <div id="pdfModal" class="pdf-modal">
-<div class="pdf-modal-c
-```
-<!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="about-content">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    Questions about my solutions? Want to discuss programming concepts?
-                </p>
-                <div class="contact-info" style="justify-content: center; gap: 2rem;">
-                    <a href="mailto:your.email@example.com" style="font-size: 1.1rem;">📧 Email Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="pdf-modal-content">
+<span class="close" onclick="closePDF()">&times;</span>
+<iframe id="pdfViewer" class="pdf-container"></iframe>
+</div>
+</div>
+
+<section id="contact">
+<div class="container">
+<h2 class="section-title">Contact</h2>
+<div class="about-content">
+<p>Email: ellahjanemortel@gmail.com</p>
+<p>Phone: +63 975 095 2032</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Ellah Jane Mortel | Portfolio</p>
+</footer>
+
+<script>
+function openPDF(pdfPath){
+const modal=document.getElementById("pdfModal");
+const viewer=document.getElementById("pdfViewer");
+viewer.src=pdfPath;
+modal.style.display="block";
+document.body.style.overflow="hidden";
+}
+
+function closePDF(){
+const modal=document.getElementById("pdfModal");
+const viewer=document.getElementById("pdfViewer");
+modal.style.display="none";
+viewer.src="";
+document.body.style.overflow="auto";
+}
+
+function triggerTyping() {
+    const typingElement = document.querySelector('.typing-subtitle');
+    const originalText = typingElement.getAttribute('data-text');
+    
+    typingElement.style.animation = 'none';
+    typingElement.style.borderRightColor = 'transparent';
+    typingElement.offsetHeight;
+    
+    typingElement.textContent = originalText;
+    typingElement.style.animation = 'typing 2.5s steps(30) forwards, blink-caret 0.75s step-end infinite';
+    typingElement.style.borderRightColor = '#60a5fa';
+}
+
+// Navigation active state
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function () {
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+        
+        if (this.getAttribute('href') === '#home') {
+            triggerTyping();
+        }
+    });
+});
+
+// Trigger on page load
+window.addEventListener('load', function() {
+    triggerTyping();
+    document.querySelector('nav a[href="#home"]').classList.add('active');
+});
+
+// Close modal on outside click
+window.onclick = function(event) {
+    const modal = document.getElementById("pdfModal");
+    if (event.target == modal) {
+        closePDF();
+    }
+}
+</script>
+
+</body>
+</html>
