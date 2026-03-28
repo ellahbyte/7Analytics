@@ -568,18 +568,27 @@ gap:15px;
 #contact .social-icons {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 20px; /* spacing from contact info */
+    gap: 20px;
+    margin-top: 20px;
 }
 
 #contact .social-icons a {
-    color: #c084fc;      /* your portfolio purple */
-    font-size: 2rem;     /* clickable but not huge */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;           /* width like a button */
+    height: 50px;          /* height like a button */
+    background: #1a1226;   /* same background as contact buttons */
+    color: #c084fc;        /* portfolio purple */
+    font-size: 1.5rem;     /* slightly bigger for visibility */
+    border-radius: 12px;   /* rounded like buttons */
     transition: 0.3s;
+    text-decoration: none;
 }
 
 #contact .social-icons a:hover {
-    color: #8b5cf6;      /* slightly darker purple on hover */
+    background: #8b5cf6;   /* hover background purple */
+    color: #fff;            /* icon turns white on hover */
     transform: translateY(-3px);
 }
     
