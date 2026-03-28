@@ -546,6 +546,24 @@ gap:15px;
     opacity: 1;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #c084fc; /* icon color */
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #8b5cf6; /* hover color */
+  transform: translateY(-3px);
+}
+
 </style>
 </head>
 
@@ -820,6 +838,16 @@ This task focuses on transforming and organizing raw academic data using Power Q
 </section>
 
 <footer>
+<!--Social Icons-->
+<div class="social-icons" style="margin-top: 15px;">
+    <a href="https://www.instagram.com/yourusername" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/yourusername" target="_blank">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+  </div>
+    
 <p>© 2026 Ellah Jane Mortel | Data Analytics Portfolio</p>
 </footer>
 
