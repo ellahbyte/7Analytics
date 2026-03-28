@@ -840,6 +840,8 @@ viewer.src="";
 document.body.style.overflow="auto";
 }
 
+let typingTimer; // global variable to track typing
+
 function triggerTyping() {
     const el = document.querySelector('.typing-subtitle');
     if (!el) return;
@@ -849,11 +851,14 @@ function triggerTyping() {
 
     let i = 0;
 
+    // Clear any previous typing interval
+    if (typingTimer) clearTimeout(typingTimer);
+
     function type() {
         if (i < text.length) {
             el.textContent += text.charAt(i);
             i++;
-            setTimeout(type, 20); // speed
+            typingTimer = setTimeout(type, 20); // speed
         }
     }
 
