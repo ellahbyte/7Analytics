@@ -572,32 +572,37 @@ gap:15px;
   margin-top: 20px;
 }
 
+/* Contact social icons */
+#contact .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
 #contact .social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;          /* increased from 60px */
-  height: 80px;         /* increased from 60px */
+  width: 90px;
+  height: 90px;
   background: #1a1226;
   color: #c084fc;
-  font-size: 2.5rem;    /* slightly bigger icons */
-  border-radius: 16px;  /* rounder buttons */
+  font-size: 3rem;
+  border-radius: 18px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-#contact .social-icons a i {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 80px; /* match the new height */
+#contact .social-icons a:hover {
+  background: #8b5cf6;
+  color: white;
+  transform: translateY(-5px);
 }
 
 #contact .social-icons a:hover {
-  background: #8b5cf6;
-  color: #fff;
-  transform: translateY(-3px);
+  background:#8b5cf6;
+  box-shadow:0 0 20px rgba(192,132,252,0.7);
 }
     
 </style>
