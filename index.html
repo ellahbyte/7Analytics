@@ -564,6 +564,25 @@ gap:15px;
   transform: translateY(-3px); /* small hover movement */
 }
 
+/* Contact social icons */
+#contact .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px; /* spacing from contact info */
+}
+
+#contact .social-icons a {
+    color: #c084fc;      /* your portfolio purple */
+    font-size: 2rem;     /* clickable but not huge */
+    transition: 0.3s;
+}
+
+#contact .social-icons a:hover {
+    color: #8b5cf6;      /* slightly darker purple on hover */
+    transform: translateY(-3px);
+}
+    
 </style>
 </head>
 
@@ -835,7 +854,7 @@ This task focuses on transforming and organizing raw academic data using Power Q
   <p>Phone: +63 975 095 2032</p>
 
   <!-- Social Icons -->
-  <div class="social-icons" style="margin-top: 15px;">
+  <div class="social-icons">
     <a href="https://www.instagram.com/ellahprobably/" target="_blank">
       <i class="fa-brands fa-instagram"></i>
     </a>
