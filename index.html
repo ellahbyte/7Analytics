@@ -566,30 +566,38 @@ gap:15px;
 
 /* Contact social icons */
 #contact .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 #contact .social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;           /* width like a button */
-    height: 50px;          /* height like a button */
-    background: #1a1226;   /* same background as contact buttons */
-    color: #c084fc;        /* portfolio purple */
-    font-size: 1.5rem;     /* slightly bigger for visibility */
-    border-radius: 12px;   /* rounded like buttons */
-    transition: 0.3s;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;          /* bigger button */
+  height: 60px;         /* bigger button */
+  background: #1a1226;  /* match your buttons */
+  color: #c084fc;
+  font-size: 2rem;      /* icon size bigger */
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#contact .social-icons a i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 60px;    /* vertically center icon */
 }
 
 #contact .social-icons a:hover {
-    background: #8b5cf6;   /* hover background purple */
-    color: #fff;            /* icon turns white on hover */
-    transform: translateY(-3px);
+  background: #8b5cf6;
+  color: #fff;
+  transform: translateY(-3px);
 }
     
 </style>
