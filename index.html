@@ -486,10 +486,30 @@ flex-direction:column;
 gap:15px;
 }
 
-.typing-subtitle{
-font-size: 1.1rem;
+.typing-subtitle {
+    font-size: 1.1rem;
+    color: #c084fc;
+    margin-bottom: 15px;
+    min-height: 80px;
+
+    border-right: 2px solid #c084fc;
+
+    white-space: normal;   /* ✅ allow line break */
+    overflow: hidden;
+
+    line-height: 1.6;
+    max-width: 500px;      /* ✅ control width */
 }
 
+.typing-subtitle::after {
+    content: "|";
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 /* ALL CARDS HOVER GLOW */
@@ -529,7 +549,7 @@ font-size: 1.1rem;
     
     <div class="header-content">
         <div class="hero-left">
-            <p class="typing-subtitle" data-text="This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks focused on data cleaning in Excel. Each task demonstrates my ability to organize datasets, correct inconsistencies, and prepare data for accurate analysis."></p>
+            <p class="typing-subtitle" data-text="I’m Ellah, but you can call me Quenari — a third-year Computer Science student who codes like a wizard and sometimes talks to computers just to make sure they listen. I love turning random ideas into something that actually works (most of the time)."></p>
             <div class="contact-info">
                 <a href="mailto:ellahjanemortel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
                 <a href="tel:+639750952032"><i class="fa-solid fa-phone"></i> Phone</a>
@@ -798,25 +818,26 @@ document.body.style.overflow="auto";
 }
 
 function triggerTyping() {
-    const typingElement = document.querySelector('.typing-subtitle');
-    if (!typingElement) return;
+    const el = document.querySelector('.typing-subtitle');
+    if (!el) return;
 
-    const text = typingElement.getAttribute('data-text');
-    typingElement.textContent = "";
-    
-    let index = 0;
+    const text = el.getAttribute('data-text');
+    el.textContent = "";
+
+    let i = 0;
 
     function type() {
-        if (index < text.length) {
-            typingElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 25);
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 20); // speed
         }
     }
 
     type();
 }
 
+window.addEventListener('load', triggerTyping);
 // Navigation active state
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function () {
