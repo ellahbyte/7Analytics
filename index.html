@@ -366,6 +366,19 @@ margin-bottom:20px;
 color:#9ca3af;
 }
 
+.task-img{
+width:100%;
+border-radius:10px;
+margin:10px 0 15px 0;
+border:1px solid #1f2937;
+transition:0.3s;
+}
+
+.task-img:hover{
+transform:scale(1.02);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
 .task-buttons{
 display:flex;
 flex-direction:column;
@@ -387,33 +400,31 @@ border-left:4px solid #ef4444;
 .btn{
 display:inline-block;
 margin-top:6px;
-padding:6px 10px;
+padding:6px 12px;
 border-radius:6px;
 font-size:.8rem;
 text-decoration:none;
 transition: 0.3s;
+background: transparent;
+border: 1px solid #a78bfa;
+color: #a78bfa;
 }
 
-.btn-primary{
+.btn:hover{
 background:#a78bfa;
 color:white;
-}
-
-.btn-primary:hover{
-background:#a78bfa;
 transform: translateY(-1px);
 }
 
 .btn-pdf{
-background:#ef4444;
-color:white;
+border: 1px solid #ef4444;
+color: #ef4444;
 }
 
 .btn-pdf:hover{
-background:#dc2626;
-transform: translateY(-1px);
+background:#ef4444;
+color:white;
 }
-
 
 /* PDF MODAL */
 
@@ -634,6 +645,9 @@ This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks fo
 <div class="task-card card-hover">
 <div class="task-number">01</div>
 <h3 class="task-title">Practice Task 2</h3>
+
+<img src="images/practice2.png" class="task-img">
+    
 <p class="task-description">
 This task focuses on cleaning and organizing a retailer dataset in Excel by correcting formats, fixing inconsistencies, and preparing the data for accurate analysis and visualization.
 </p>
@@ -660,6 +674,9 @@ This task focuses on cleaning and organizing a retailer dataset in Excel by corr
 <div class="task-card card-hover">
 <div class="task-number">02</div>
 <h3 class="task-title">Practice Task 3</h3>
+
+<img src="images/practice2.png" class="task-img">
+
 <p class="task-description">
 This task focuses on applying various Excel functions such as logical, text, date, lookup, mathematical, and statistical formulas. It demonstrates how these functions are used to process, organize, and analyze data effectively in Excel.
 </p>
@@ -686,6 +703,9 @@ This task focuses on applying various Excel functions such as logical, text, dat
 <div class="task-card card-hover">
 <div class="task-number">03</div>
 <h3 class="task-title">Practice Task 4</h3>
+
+<img src="images/practice2.png" class="task-img">
+
 <p class="task-description">
 This task focuses on cleaning and analyzing sales data in Excel by organizing the dataset, correcting formatting issues, and preparing the data for accurate reporting and analysis.
 </p>
@@ -723,6 +743,9 @@ This task focuses on cleaning and analyzing sales data in Excel by organizing th
 <div class="task-card midterm card-hover">
 <div class="task-number">01</div>
 <h3 class="task-title">Midterm Task 1</h3>
+
+<img src="images/practice2.png" class="task-img">
+
 <p class="task-description">
 This task focuses on building a data model by establishing relationships between different tables, allowing the dataset to be connected logically and enabling efficient data analysis and reporting.
 </p>
@@ -749,6 +772,9 @@ This task focuses on building a data model by establishing relationships between
 <div class="task-card midterm card-hover">
 <div class="task-number">02</div>
 <h3 class="task-title">Midterm Task 2</h3>
+
+<img src="images/practice2.png" class="task-img">
+
 <p class="task-description">
 This task focuses on transforming and organizing raw academic data using Power Query by creating structured tables such as Students, Courses, Programs, Instructors, Rooms, and Schedules, ensuring the dataset is clean and ready for analysis.
 </p>
