@@ -565,44 +565,39 @@ gap:15px;
 }
 
 /* Contact social icons */
-#contact .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+#contact .social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin:20px 0;
 }
 
-/* Contact social icons */
-#contact .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
+#contact .social-icons a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:60px;
+    height:60px;
+    font-size:28px;
+    border-radius:50%;
+    text-decoration:none;
+    transition:0.3s ease;
 }
 
-#contact .social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 90px;
-  background: #1a1226;
-  color: #c084fc;
-  font-size: 3rem;
-  border-radius: 18px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+/* Instagram */
+#contact .social-icons a.instagram{
+    color:#e1306c;
 }
 
-#contact .social-icons a:hover {
-  background: #8b5cf6;
-  color: white;
-  transform: translateY(-5px);
+/* Facebook */
+#contact .social-icons a.facebook{
+    color:#1877f2;
 }
 
-#contact .social-icons a:hover {
-  background:#8b5cf6;
-  box-shadow:0 0 20px rgba(192,132,252,0.7);
+/* Hover effect */
+#contact .social-icons a:hover{
+    transform:scale(1.1);
 }
     
 </style>
@@ -868,24 +863,29 @@ This task focuses on transforming and organizing raw academic data using Power Q
 </div>
 
 <section id="contact">
-<div class="container">
-<i class="fa-solid fa-paper-plane" style="font-size: 3rem; display: block; margin: 0 auto 20px; text-align: center;"></i>
-<h2 class="section-title">Contact</h2>
-<div class="about-content">
-  <p>Email: ellahjanemortel@gmail.com</p>
-  <p>Phone: +63 975 095 2032</p>
+  <div class="container">
 
-  <!-- Social Icons -->
-  <div class="social-icons">
-    <a href="https://www.instagram.com/ellahprobably/" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/missquenari#" target="_blank">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
+    <i class="fa-solid fa-paper-plane" style="font-size:3rem; display:block; margin:0 auto 20px; text-align:center;"></i>
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="about-content">
+      <p>Email: ellahjanemortel@gmail.com</p>
+      <p>Phone: +63 975 095 2032</p>
+
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <a href="https://www.instagram.com/ellahprobably/" class="instagram" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/missquenari" class="facebook" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+
+    </div>
   </div>
-</div>
-</div>
 </section>
 
 <footer>
