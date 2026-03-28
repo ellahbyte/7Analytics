@@ -75,14 +75,10 @@ flex:1;
 }
 
 .typing-subtitle{
-font-size:1.3rem;
-color:#c084fc;
-margin-bottom:15px;
-min-height: 40px;
-border-right: 2px solid #c084fc;
-white-space: nowrap;
-overflow: hidden;
-animation: typing 3s steps(30) forwards, blink-caret 0.75s step-end infinite;
+    font-size:1.3rem;
+    color:#c084fc;
+    margin-bottom:15px;
+    min-height: 40px;
 }
 
 @keyframes typing {
@@ -837,7 +833,6 @@ function triggerTyping() {
     type();
 }
 
-window.addEventListener('load', triggerTyping);
 // Navigation active state
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function () {
