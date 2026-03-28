@@ -488,19 +488,28 @@ gap:15px;
     margin-bottom: 15px;
     min-height: 80px;
 
-    border-right: 2px solid #c084fc;
-
-    white-space: normal;   /* ✅ allow line break */
-    overflow: hidden;
-
     line-height: 1.6;
-    max-width: 500px;      /* ✅ control width */
+    max-width: 500px;
+
+    white-space: normal;
+    overflow: hidden;
 }
 
 .typing-subtitle::after {
     content: "|";
     animation: blink 1s infinite;
-    margin-left: 5px;
+    margin-left: 3px;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.profile-name{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c084fc;
 }
 
 @keyframes blink {
