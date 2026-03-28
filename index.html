@@ -46,14 +46,17 @@ border-bottom:1px solid #1f2937;
 position: relative;
 }
 
-.header-content{
-display:flex;
-align-items:flex-start;
-justify-content:space-between;
-flex-wrap:wrap;
-gap: 80px;  /* ← DOUBLED! Creates wide space between left/right */
-margin-top: 40px;  /* ← Pushes content down from title */
-position: relative;
+.header-content {
+    display: flex;
+    align-items: center; /* ← FIX */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px; /* reduce from 80px */
+    margin-top: 60px;
+}
+
+.hero-left p {
+    max-width: 500px;
 }
 
 .header-main-title{
@@ -494,9 +497,25 @@ font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
-.card-hover:hover {
-    box-shadow: 0 0 25px 8px rgba(192,132,252,0.5); /* purple glow */
-    transform: translateY(-3px);
+.card-hover {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 30px rgba(192,132,252,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card-hover:hover::after {
+    opacity: 1;
 }
 
 </style>
@@ -510,8 +529,7 @@ font-size: 1.1rem;
     
     <div class="header-content">
         <div class="hero-left">
-            <p class="typing-description" data-text="This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks focused on data cleaning in Excel. Each task demonstrates my ability to organize datasets, correct inconsistencies, and prepare data for accurate analysis.
-">I’m Ellah, but you can call me Quenari — a third-year Computer Science student who codes like a wizard and sometimes talks to computers just to make sure they listen. I love turning random ideas into something that actually works (most of the time).</p>
+            <p class="typing-subtitle" data-text="This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks focused on data cleaning in Excel. Each task demonstrates my ability to organize datasets, correct inconsistencies, and prepare data for accurate analysis."></p>
             <div class="contact-info">
                 <a href="mailto:ellahjanemortel@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
                 <a href="tel:+639750952032"><i class="fa-solid fa-phone"></i> Phone</a>
@@ -520,7 +538,7 @@ font-size: 1.1rem;
 
         <div class="hero-right">
             <div class="profile-container card-hover">
-                <img src="images/1774697213941.png" class="profile-container hover-glow" alt="Ellah Jane Mortel">
+                <img src="images/1774697213941.png" class="profile-photo hover-glow" alt="Ellah Jane Mortel">
             </div>
             <h1 class="profile-name">Ellah Jane Mortel</h1>
         </div>
@@ -781,15 +799,22 @@ document.body.style.overflow="auto";
 
 function triggerTyping() {
     const typingElement = document.querySelector('.typing-subtitle');
-    const originalText = typingElement.getAttribute('data-text');
+    if (!typingElement) return;
+
+    const text = typingElement.getAttribute('data-text');
+    typingElement.textContent = "";
     
-    typingElement.style.animation = 'none';
-    typingElement.style.borderRightColor = 'transparent';
-    typingElement.offsetHeight;
-    
-    typingElement.textContent = originalText;
-    typingElement.style.animation = 'typing 2.5s steps(30) forwards, blink-caret 0.75s step-end infinite';
-    typingElement.style.borderRightColor = '#c084fc';
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 25);
+        }
+    }
+
+    type();
 }
 
 // Navigation active state
