@@ -325,11 +325,12 @@ gap:25px;
 
 .task-card{
 background:#1a1226;
-padding:25px;
+padding:50px 25px 25px;
 border-radius:12px;
 border:1px solid #1f2937;
 transition:0.3s;
 position:relative;
+
 }
 
 .task-card:hover{
@@ -353,11 +354,15 @@ right:20px;
 font-size:2rem;
 font-weight:700;
 color:#1f2937;
+pointer-events: none;
+z-index: 1;
 }
 
 .task-title{
 margin-bottom:10px;
 color:#c084fc;
+padding-right: 60px;
+word-wrap: break-word;
 }
 
 .task-description{
@@ -608,7 +613,7 @@ gap:15px;
 
         <div class="hero-right">
             <div class="profile-container card-hover">
-                <img src="images/pfp.jpeg" class="profile-photo hover-glow" alt="Ellah Jane Mortel">
+                <img src="images/photo.png" class="profile-photo hover-glow" alt="Ellah Jane Mortel">
             </div>
             <h1 class="profile-name">Ellah Jane Mortel</h1>
         </div>
@@ -624,7 +629,8 @@ gap:15px;
 <li><a href="#about">About</a></li>
 <li><a href="#practice-tasks">Practice Tasks</a></li>
 <li><a href="#midterm-tasks">Midterm Tasks</a></li>
-<li><a href="#finals-tasks">Finals Tasks</a></li>
+<li><a href="#final-practice-tasks">Final Practice Tasks</a></li>
+<li><a href="#final-tasks">Finals Tasks</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </div>
@@ -677,16 +683,17 @@ This portfolio showcases my solutions to 3 Practice Tasks and 2 Midterm Tasks fo
 </div>
 </section>
 
+<!-- MIDTERM PRACTICE -->
 <section id="practice-tasks">
 <div class="container">
 <i class="fa-solid fa-clipboard-list" style="font-size: 3rem; display: block; margin: 0 auto 20px; text-align: center;"></i>
-<h2 class="section-title">Practice Tasks</h2>
+<h2 class="section-title">Midterm Practice Tasks</h2>
 <p class="section-subtitle">3 Hands-on analytics exercises</p>
 
 <div class="tasks-grid">
 <div class="task-card card-hover">
 <div class="task-number">01</div>
-<h3 class="task-title">Practice Task 2</h3>
+<h3 class="task-title">Demo Data Analysis</h3>
 
 <img src="images/p1.png" class="task-img">
     
@@ -715,7 +722,7 @@ This task focuses on cleaning and organizing a retailer dataset in Excel by corr
 
 <div class="task-card card-hover">
 <div class="task-number">02</div>
-<h3 class="task-title">Practice Task 3</h3>
+<h3 class="task-title">Advanced Excel Functions</h3>
 
 <img src="images/p2.png" class="task-img">
 
@@ -744,7 +751,7 @@ This task focuses on applying various Excel functions such as logical, text, dat
 
 <div class="task-card card-hover">
 <div class="task-number">03</div>
-<h3 class="task-title">Practice Task 4</h3>
+<h3 class="task-title">Data Cleaning and Prep using Power Query</h3>
 
 <img src="images/p3.png" class="task-img">
 
@@ -784,7 +791,7 @@ This task focuses on cleaning and analyzing sales data in Excel by organizing th
 <div class="tasks-grid">
 <div class="task-card midterm card-hover">
 <div class="task-number">01</div>
-<h3 class="task-title">Midterm Task 1</h3>
+<h3 class="task-title">Data Cleaning and Modeling</h3>
 
 <img src="images/m1.png" class="task-img">
 
@@ -813,7 +820,7 @@ This task focuses on building a data model by establishing relationships between
 
 <div class="task-card midterm card-hover">
 <div class="task-number">02</div>
-<h3 class="task-title">Midterm Task 2</h3>
+<h3 class="task-title">Data Preparation and Modeling using Power Query</h3>
 
 <img src="images/m2.png" class="task-img">
 
@@ -842,6 +849,342 @@ This task focuses on transforming and organizing raw academic data using Power Q
 </div>
 </div>
 </section>
+
+<!-- FINAL PRACTICE -->
+<section id="final-practice-tasks">
+<div class="container">
+
+<i class="fa-solid fa-clipboard-list" style="font-size: 3rem; display: block; margin: 0 auto 20px; text-align: center;"></i>
+
+<h2 class="section-title">Final Practice Tasks</h2>
+
+<p class="section-subtitle">
+3 Practical data analysis exercises for skill development
+</p>
+
+<div class="tasks-grid">
+
+<!-- TASK 1 -->
+<div class="task-card card-hover">
+
+<div class="task-number">01</div>
+
+<h3 class="task-title">Data Prep And EDA using SQL</h3>
+
+<img src="images/p1.png" class="task-img">
+
+<p class="task-description">
+This task focuses on cleaning, organizing, and exploring datasets using SQL queries. Includes filtering, grouping, and identifying patterns to understand the data better.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="practice/PracticeTask2.pdf"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View PDF
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="practice/PracticeTask2_EllahJaneMortel.xlsx"
+   class="btn btn-primary hover-glow"
+   download>
+
+<i class="fa-solid fa-download"></i> Download xlsx
+
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- TASK 2 -->
+<div class="task-card card-hover">
+
+<div class="task-number">02</div>
+
+<h3 class="task-title">Reading Task on Analytics</h3>
+
+<img src="images/p2.png" class="task-img">
+
+<p class="task-description">
+This task involves analyzing and reflecting on concepts in data analytics through reading materials, then expressing insights, understanding, and applications in essay form.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="practice/PracticeTask3_Antap_Alenor_Mortel_EllahJane.pdf"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View PDF
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="practice/PracticeTask3_Antap_Alenor_Mortel_EllahJane.xlsx"
+   class="btn btn-primary hover-glow"
+   download>
+
+<i class="fa-solid fa-download"></i> Download xlsx
+
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- TASK 3 -->
+<div class="task-card card-hover">
+
+<div class="task-number">03</div>
+
+<h3 class="task-title">Project Preparation</h3>
+
+<img src="images/p3.png" class="task-img">
+
+<p class="task-description">
+This task centers on collaborative planning of a data project, including defining objectives, assigning roles, and preparing the structure for implementation.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="https://docs.google.com/spreadsheets/d/1lez3SJKrvSqcA1r3raOSEl5xY6osCK4d/edit?usp=sharing&ouid=100817520510275733673&rtpof=true&sd=true"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View xlsx
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="https://drive.google.com/drive/folders/1HbcYmtusOk2ENMMhSLB14Sf9idHLYagG?usp=sharing"
+   class="btn btn-primary hover-glow"
+   target="_blank">
+
+<i class="fa-solid fa-download"></i> Download from Google Drive
+
+</a>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FINAL TASKS -->
+<section id="final-tasks">
+
+<div class="container">
+
+<i class="fa-solid fa-award" style="font-size: 3rem; display: block; margin: 0 auto 20px; text-align: center;"></i>
+
+<h2 class="section-title">Final Tasks</h2>
+
+<p class="section-subtitle">
+4 Comprehensive data analytics tasks
+</p>
+
+<div class="tasks-grid">
+
+<!-- FINAL TASK 1 -->
+<div class="task-card final card-hover">
+
+<div class="task-number">01</div>
+
+<h3 class="task-title">
+Data Preparation and Exploratory Data Analysis (EDA) using MySQL
+</h3>
+
+<img src="images/m1.png" class="task-img">
+
+<p class="task-description">
+This task focuses on advanced data cleaning and exploration using MySQL, focusing on extracting insights, detecting trends, and preparing data for visualization.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="midterm/Midterm_LabTask1_Antap_Mortel.pdf"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View PDF
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="midterm/Midterm_LabTask1_Antap_Mortel.xlsx"
+   class="btn btn-primary hover-glow"
+   download>
+
+<i class="fa-solid fa-download"></i> Download xlsx
+
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- FINAL TASK 2 -->
+<div class="task-card final card-hover">
+
+<div class="task-number">02</div>
+
+<h3 class="task-title">Navigating Power BI</h3>
+
+<img src="images/m2.png" class="task-img">
+
+<p class="task-description">
+This task introduces the Power BI interface, tools, and features used to connect, transform, and visualize data effectively.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="midterm/Midterm_LabTask2_Mortel_EllahJane.pdf"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View PDF
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="https://drive.google.com/drive/folders/1rJbGGJfKEkH_tbS78t6IsGp2wONANjdR?usp=sharing"
+   class="btn btn-primary hover-glow"
+   target="_blank">
+
+<i class="fa-solid fa-download"></i> Download from Google Drive
+
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- FINAL TASK 3 -->
+<div class="task-card final card-hover">
+
+<div class="task-number">03</div>
+
+<h3 class="task-title">Using Time Intelligence Function</h3>
+
+<img src="images/m1.png" class="task-img">
+
+<p class="task-description">
+This task utilizes Power BI functions to analyze time-based data, such as trends over days, months, or years, enabling deeper temporal insights.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="midterm/Midterm_LabTask1_Antap_Mortel.pdf"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View PDF
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="midterm/Midterm_LabTask1_Antap_Mortel.xlsx"
+   class="btn btn-primary hover-glow"
+   download>
+
+<i class="fa-solid fa-download"></i> Download xlsx
+
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- FINAL TASK 4 -->
+<div class="task-card final card-hover">
+
+<div class="task-number">04</div>
+
+<h3 class="task-title">
+Designing Interactive Reports in Power BI
+</h3>
+
+<img src="images/m2.png" class="task-img">
+
+<p class="task-description">
+This task focuses on creating dynamic dashboards with filters, slicers, and visuals that allow users to interact with and explore data easily.
+</p>
+
+<div class="task-buttons">
+
+<div class="file-section pdf">
+<strong><i class="fa-regular fa-file"></i> Task Documentation</strong><br>
+
+<a href="midterm/Midterm_LabTask2_Mortel_EllahJane.pdf"
+   class="btn btn-pdf"
+   target="_blank">
+
+<i class="fa-regular fa-eye"></i> View PDF
+
+</a>
+</div>
+
+<div class="file-section">
+<strong><i class="fa-regular fa-folder"></i> Solution Files</strong><br>
+
+<a href="https://drive.google.com/drive/folders/1rJbGGJfKEkH_tbS78t6IsGp2wONANjdR?usp=sharing"
+   class="btn btn-primary hover-glow"
+   target="_blank">
+
+<i class="fa-solid fa-download"></i> Download from Google Drive
+
+</a>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
 
 <!-- PDF Modal -->
 <div id="pdfModal" class="pdf-modal">
